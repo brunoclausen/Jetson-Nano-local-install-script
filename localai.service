@@ -1,0 +1,12 @@
+[Unit]
+Description=LocalAI Server
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/app/localai
+ExecStart=/app/localai/venv/bin/python manage.py runserver 0.0.0.0:8000
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
